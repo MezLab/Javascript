@@ -1,0 +1,241 @@
+/**
+* @title jsApp
+* @description Slider CSS Style
+* @author Mez/Massimo Maestri
+* @version 1.0
+*/
+
+div.wrapper{
+    overflow:hidden;
+}
+div.wrapper h1{
+    font-family: 'Vincente Sembold';
+    font-size: 70px;
+    letter-spacing: 10px;
+    line-height: 0.9;
+    color: #DD4F2D;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+div.wrapper img.tuffo{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 420px;
+    z-index: 9999;
+}
+div#slider{
+    position: relative;
+    top:-500px;
+    left:-200px;
+    height: 650px;
+}
+div.object,
+div.table{
+    position: absolute;
+    border: 100px solid transparent;
+    width: 70%;
+    height: 700px;
+    border-radius: 100%;
+}
+
+div.table{
+    border-right: 200px solid #C89B33;
+    border-bottom: 200px solid #C89B33;
+    opacity: 0.1;
+}
+div[data-show='active']{
+    animation: rot .8s ease-in-out forwards;
+    z-index: 9;
+}
+div[data-show='disable']{
+    animation: noRot 1s ease-in-out forwards;
+    z-index: 9;
+}
+div[data-show='idisable']{
+    animation: inoRot 1s ease-in-out forwards;
+    z-index: 9;
+}
+div[data-show='iactive']{
+    animation: aRot 1s ease-in-out forwards;
+    z-index: 9;
+}
+div.object img[data-show='show']{
+    animation: plat .8s ease-in-out forwards;
+    z-index: 9;
+}
+div.object img[data-show='hide']{
+    animation: noPlat .8s ease-in-out forwards;
+    z-index: 9;
+}
+
+div.object img{
+    width: 400px;
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    top: -40%;
+    left: 60%;
+    transform: translate(-50%);
+}
+
+button{
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;;
+}
+button img.left{
+    transform: rotate(180deg);
+}
+div.minSlide{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* Animation Set */
+
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(100deg);
+    }
+}
+@keyframes noRot{
+    0%{
+        opacity: 1;
+        transform: rotate(100deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(200deg);
+    }
+}
+
+@keyframes aRot{
+    0%{
+        transform: rotate(200deg);
+    }
+    100%{
+        transform: rotate(100deg);
+    }
+}
+@keyframes inoRot{
+    0%{
+        opacity: 1;
+        transform: rotate(100deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes plat{
+    0%{
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes noPlat{
+    0%{
+        opacity: 1;
+        transform: rotate(50deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+}
+
+/* Selezione Miniatura */
+
+div#thumb{
+    width: 60%;
+    margin:0 auto;
+}
+div.thumbs {
+    width: 25%;
+    float: left;
+}
+div[thumb="active"]{
+    background-color: #ececec;
+}
+div.thumbMin {
+    padding: 20px 0px;
+    border-radius: 40px;
+    margin-right: 30px;
+}
+div.thumbMin:last-child {
+    margin-right: 0px;
+}
+div.thumbMin img {
+    display: block;
+    margin:0 auto;
+}
+
+div.thumbMin img{
+    width: 160px;
+}
+
+div.thumbMin p {
+    font-family: 'Gotham Bold';
+    color:#534430;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    width: 120px;
+    margin: 20px auto;
+}
+
+/* Responsive */
+
+@media screen and (max-width:1440px){
+        div.minSlide{
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width:1180px){
+        div#thumb{
+        width: 85%!important;
+    }
+}
+
+@media screen and (max-width:959px){
+    div.thumbMin {
+        padding: 10px 0px!important;
+    }
+    div.thumbMin img {
+        width: 120px!important;
+    }
+    div.object img{
+        width: 300px;
+        top: -10%;
+        left: 90%;
+    }
+}
+@media screen and (max-width:700px){
+        div#thumb{
+        display: none!important;
+    }
+        div.object img{
+        width: 250px;
+        top: 0%;
+        left: 110%;
+    }
+}
