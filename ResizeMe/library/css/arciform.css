@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Arciform';
+    src: url('arciform/hinted-Arciform.eot');
+    src: url('arciform/hinted-Arciform.eot?#iefix') format('embedded-opentype'),
+        url('arciform/hinted-Arciform.woff2') format('woff2'),
+        url('arciform/hinted-Arciform.woff') format('woff'),
+        url('arciform/hinted-Arciform.ttf') format('truetype'),
+        url('arciform/hinted-Arciform.svg#Arciform') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
